@@ -1,2 +1,2 @@
 # projet-NSI-trone
-projet NSI:
+projet NSI: Eliot BUEILBAUDOT, PIRYT, PERONNET
