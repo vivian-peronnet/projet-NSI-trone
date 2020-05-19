@@ -27,34 +27,34 @@ def comp_1(y,z):
      triSelection_2(co2)
      prer=[]
      a = 0
-     b = len(co2)-1
+     b = len(co1)-1
      m = (a+b)//2
+     
      while a < b :
-         if co2[m] == element :
-             return m
-         elif co2[m] > element :
-             b = m-1
+         if co1[m] == element :
+               indice.append(m)
+               return m
+         elif co1[m] > element :
+             b = m-2
          else :
-             a = m+1
+             a = m+2
          m = (a+b)//2
-         indice.append(a)
-         return a
      for i in indice:
           prer.append(co2[i+1])
-     element=co2[-1]
-     a=0
+     element=co1[-1]
+     a = 0
+     b = len(prer)-1
+     m = (a+b)//2
      while a < b :
          if prer[m] == element :
              return m
          elif prer[m] > element :
-             b = m-1
+             b = m-2
          else :
-             a = m+1
+             a = m+2
          m = (a+b)//2
-         return a
          if a!=0:
               print("game over")
-     print(a)
 
 def comp_2(co1,co2):
      indice=[]
@@ -74,11 +74,12 @@ def comp_2(co1,co2):
              a = m+1
          m = (a+b)//2
          indice.append(a)
-         return a
      for i in indice:
           prer.append(co1[i+1])
      element=co1[-1]
-     a=0
+     a = 0
+     b = len(prer)-1
+     m = (a+b)//2
      while a < b :
          if prer[m] == element :
              return m
@@ -87,10 +88,8 @@ def comp_2(co1,co2):
          else :
              a = m+1
          m = (a+b)//2
-         return a
          if a!=0:
-              print("game over")
-     print(a)
+          print("game over")
 # gestionnaires d'événements :
 def depl_gauche(event):
      avance(-10, 0)
