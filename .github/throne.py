@@ -1,5 +1,5 @@
-
 import tkinter as tk
+
 def triSelection_2(a) :
     n = len(a)
     for i in range(0,n-1,2) : 
@@ -103,14 +103,14 @@ motion2 = {
     'm': (0, -10),
     ':': (0, 10),
     }
- 
+
+co1=[]
+co2=[]
 def on_key1(event):
-    co1=[]
-    co2=[]
     if not event.char in motion.keys():
         return
     if event.char in motion2.keys():
-        x20, y20=10,0
+        x20, y20=100,0
         d2x, d2y = motion2[event.char]
         canvas.move('ball2', d2x, d2y)
         x20, y20, x21, y21 = canvas.bbox('ball2')
@@ -124,7 +124,7 @@ def on_key1(event):
         
  
     if event.char in motion1.keys() :
-        x10, y10= -10, 0
+        x10, y10= -100, 0
         d1x, d1y = motion1[event.char]
         canvas.move('ball1', d1x, d1y)
         x10, y10, x11, y11 = canvas.bbox('ball1')     
@@ -145,6 +145,7 @@ canvas.pack()
  
 canvas.create_oval(5, 5, 15, 15, fill='red', tag='ball1')
 canvas.create_oval(5, 5, 15, 15, fill='red', tag='ball2')
+
 line = [10, 10, 10, 10]
 canvas.create_line(line, tag='line1')
 canvas.create_line(line, tag='line2')
